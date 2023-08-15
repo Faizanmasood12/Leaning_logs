@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% block page_header %}
+<h2>Log in to your account</h2>
+
+{% endblock page_header %}
+
+{% block content %}
+
+<form action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button type='submit' content='Log in'%}
+</form>
+
+
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+{% extends 'learning_logs/base.html' %}
+
+
+{% block page_header %}
+<div class="p-3 mb-4 bg-light border rounded-3">
+    <div class="container-fluid py-4">
+        <h1 class="display-3" >Track Your Learning.</h1>
+        <p class="lead">Learning log help you keep track of your learning, for any topic your are learning about.
+        However when you learn something new about a topic make an entry and summarize what you have learned.</p>
+        {% if user.is_authenticated %}
+
+        {% else %}
+            <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:registration'%}">Register &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock page_header %}
